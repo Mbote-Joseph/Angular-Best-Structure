@@ -1,1 +1,28 @@
-<p>sign-in works!</p>
+<h2 class="h">Sign in</h2>
+    <p class="muted">
+      Demo tip: use <b>admin</b> in the email to become admin (e.g. admin@gmail.com).
+    </p>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <label>Email</label>
+      <input type="email" formControlName="email" placeholder="you@example.com" />
+
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="••••••••" />
+
+      <div class="row">
+        <a routerLink="/auth/forgot-password" class="link">Forgot password?</a>
+      </div>
+
+      <button class="btn" [disabled]="form.invalid || loading">
+        {{ loading ? 'Signing in...' : 'Sign in' }}
+      </button>
+
+      <p class="small">
+        Don’t have an account? <a routerLink="/auth/sign-up">Create one</a>
+      </p>
+
+      @if(error){
+        <p class="error" >{{ error }}</p>
+      }
+    </form>

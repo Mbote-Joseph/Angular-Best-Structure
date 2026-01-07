@@ -12,3 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+.h{ margin:0 0 6px; }
+.muted{ margin:0 0 16px; color:#6b7280; font-size:13px; }
+.form{ display:grid; gap:10px; }
+label{ font-size:13px; color:#374151; }
+input{ padding:10px 12px; border-radius:10px; border:1px solid #e5e7eb; outline:none; }
+.row{ display:flex; justify-content:flex-end; }
+.link{ font-size:13px; color:#111827; text-decoration:none; font-weight:600; }
+.btn{
+  margin-top:6px;
+  padding:10px 12px; border-radius:10px; border:1px solid #111827;
+  background:#111827; color:#fff; cursor:pointer;
+}
+.btn:disabled{ opacity:.6; cursor:not-allowed; }
+.small{ margin-top:10px; font-size:13px; color:#6b7280; }
+.small a{ color:#111827; font-weight:700; text-decoration:none; }
+.error{ margin:6px 0 0; color:#b91c1c; font-size:13px; }

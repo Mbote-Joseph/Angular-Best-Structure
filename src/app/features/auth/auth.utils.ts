@@ -12,12 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export type UserRole = 'individual' | 'admin';
-
-export interface User {
-  id: string;
-  fullName: string;
-  email: string;
-  role: UserRole;
-  emailVerified?: boolean;
+export function safeReturnUrl(value: string | null | undefined): string {
+  const url = value?.trim() ?? '';
+  // prevent open redirects; allow only internal routes
+  if (!url.startsWith('/')) return '/';
+  if (url.startsWith('//')) return '/';
+  return url;
 }
