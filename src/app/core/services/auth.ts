@@ -27,6 +27,14 @@ export class Auth {
     return this.userSubject.value;
   }
 
+  isLoggedIn(): boolean{
+    return !!this.token;
+  }
+
+  getToken(): string | null {
+    return this.token;
+  }
+
   // Sign-In
   signIn(email: string, password: string): void {
     // demo: generate a fake user
