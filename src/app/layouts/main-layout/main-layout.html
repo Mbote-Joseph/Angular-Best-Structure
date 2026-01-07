@@ -13,7 +13,7 @@
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
       <a routerLink="/profile" routerLinkActive="active">Profile</a>
       <a routerLink="/admin" routerLinkActive="active">Admin</a>
-      <a routerLink="/auth/sign-in" routerLinkActive="active">Logout</a>
+      <a (click)="onLogOut()" routerLinkActive="active">Logout</a>
     </nav>
   </header>
 

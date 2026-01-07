@@ -43,6 +43,8 @@ export class Auth {
     // If user already exists with the same email, reuse (Keeps name/verified flags if your model has them)
     const existing = this.getStoredUser();
 
+    console.log(`${existing?.role} From sign in service`)
+
     const user: User =
     existing && existing.email.toLowerCase() == email.toLowerCase() ? {...existing, role} : {id: crypto.randomUUID(), fullName: "Demo User", email, role};
 
@@ -73,11 +75,18 @@ export class Auth {
   }
 
   signOut(): void {
+    const user = this.currentUser?.fullName;
+    console.log(`User ${user}`)
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(USER_KEY);
     localStorage.removeItem(RESET_TOKEN_KEY);
     localStorage.removeItem(VERIFY_TOKEN_KEY);
     this.userSubject.next(null);
+
+
+
+
+    console.log(`The User has being logged out`)
   }
 
   // Email Verification (demo)

@@ -21,7 +21,7 @@ export class SignIn {
   error = '';
 
   form = this.fb.group({
-    email: ['', Validators.required, Validators.email],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
   });
 
