@@ -1,1 +1,30 @@
-<p>profile works!</p>
+<div class="card">
+  <div class="top">
+    <h2>Profile</h2>
+    <a class="link" routerLink="/">← Back</a>
+  </div>
+
+  <p class="muted">Update your account details.</p>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="save()">
+    <label>Full name</label>
+    <input formControlName="fullName" placeholder="Your name" />
+
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="you@example.com" />
+
+    <div class="actions">
+      <button class="btn primary" [disabled]="form.invalid || loading">
+        {{ loading ? 'Saving...' : 'Save changes' }}
+      </button>
+      <button type="button" class="btn" (click)="back()">Cancel</button>
+    </div>
+
+    @if(success){
+      <p class="ok">{{ success }}</p>
+    }
+    @if(error){
+      <p class="error">{{ error }}</p>
+    }
+  </form>
+</div>

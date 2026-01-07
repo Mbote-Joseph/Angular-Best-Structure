@@ -1,1 +1,40 @@
-<p>dashboard works!</p>
+<div class="page">
+  <div class="card">
+    <h2>Individual Dashboard</h2>
+
+    @if(user){
+      <ng-container>
+      <p class="muted">
+        Welcome back, <b>{{ user.fullName }}</b>
+      </p>
+
+      <div class="grid">
+        <div class="stat">
+          <div class="label">Email</div>
+          <div class="value">{{ user.email }}</div>
+        </div>
+
+        <div class="stat">
+          <div class="label">Role</div>
+          <div class="value">{{ user.role }}</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" routerLink="/profile">Edit Profile</a>
+        <a class="btn" routerLink="/admin">Go to Admin</a>
+        <button class="btn danger" (click)="logout()">Logout</button>
+      </div>
+
+      <p class="hint">
+        Tip: Use an email containing <b>admin</b> to sign in as admin.
+      </p>
+    </ng-container>
+    }
+
+    <ng-template #guest>
+      <p class="muted">You are not logged in.</p>
+      <a class="btn" routerLink="/auth/sign-in">Sign in</a>
+    </ng-template>
+  </div>
+</div>

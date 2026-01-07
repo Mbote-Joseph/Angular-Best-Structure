@@ -1,1 +1,29 @@
-<p>main-layout works!</p>
+<div class="app-shell">
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">LS</div>
+      <div class="text">
+        <div class="title">LearnSprint</div>
+        <div class="subtitle">Individual Portal</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+      <a routerLink="/profile" routerLinkActive="active">Profile</a>
+      <a routerLink="/admin" routerLinkActive="active">Admin</a>
+      <a routerLink="/auth/sign-in" routerLinkActive="active">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>© {{ currentYear }} LearnSprint</span>
+  </footer>
+</div>

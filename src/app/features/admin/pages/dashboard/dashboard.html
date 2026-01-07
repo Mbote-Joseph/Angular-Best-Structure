@@ -1,1 +1,44 @@
-<p>dashboard works!</p>
+<div class="grid">
+  <section class="card hero">
+    <h2>Admin Dashboard</h2>
+    <p class="muted">
+      Manage users, settings, and system configuration.
+    </p>
+
+    @if(user){
+      <div class="mini">
+      <div class="pill">Logged in as: <b>{{ user.fullName }}</b></div>
+      <div class="pill">Role: <b>{{ user.role }}</b></div>
+    </div>
+    }
+
+    <div class="actions">
+      <a class="btn" routerLink="/admin/users">Manage Users</a>
+      <a class="btn" routerLink="/admin/settings">System Settings</a>
+      <button class="btn danger" (click)="logout()">Logout</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>Quick Stats (Demo)</h3>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="label">Total Users</div>
+        <div class="value">24</div>
+      </div>
+      <div class="stat">
+        <div class="label">Active Today</div>
+        <div class="value">7</div>
+      </div>
+      <div class="stat">
+        <div class="label">Pending Approvals</div>
+        <div class="value">3</div>
+      </div>
+    </div>
+
+    <p class="hint">
+      Next step: we’ll replace these with API-driven values using HttpClient + interceptors.
+    </p>
+  </section>
+</div>

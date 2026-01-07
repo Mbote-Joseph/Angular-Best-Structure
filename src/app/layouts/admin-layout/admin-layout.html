@@ -1,1 +1,40 @@
-<p>admin-layout works!</p>
+<div class="admin-shell">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">LS</div>
+      <div class="text">
+        <div class="title">LearnSprint</div>
+        <div class="subtitle">Admin Panel</div>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Dashboard
+      </a>
+      <a routerLink="/admin/users" routerLinkActive="active">Users</a>
+      <a routerLink="/admin/settings" routerLinkActive="active">Settings</a>
+
+      <div class="divider"></div>
+
+      <a routerLink="/" class="back">← Back to Individual</a>
+    </nav>
+
+    <footer class="side-footer">
+      <span>© {{ currentYear }} LearnSplint</span>
+    </footer>
+  </aside>
+
+  <!-- Main content area -->
+  <section class="main">
+    <header class="topbar">
+      <h2 class="page-title">Admin Area</h2>
+      <div class="hint">Manage users, settings, and system data</div>
+    </header>
+
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </section>
+</div>

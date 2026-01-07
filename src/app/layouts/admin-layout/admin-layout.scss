@@ -1,0 +1,144 @@
+// Copyright 2026 josephmbote
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+.admin-shell {
+  min-height: 100vh;
+  background: #f3f5f9;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  background: #111827;
+  color: #e5e7eb;
+  padding: 18px 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    background: #ffffff;
+    color: #111827;
+  }
+
+  .title {
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .subtitle {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #9ca3af;
+  }
+}
+
+.menu {
+  display: grid;
+  gap: 8px;
+
+  a {
+    text-decoration: none;
+    color: #e5e7eb;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 13px;
+    transition: 0.15s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    &.active {
+      background: rgba(255, 255, 255, 0.16);
+      outline: 1px solid rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+    margin: 8px 0;
+  }
+
+  .back {
+    color: #d1d5db;
+    font-weight: 700;
+  }
+}
+
+.side-footer {
+  margin-top: auto;
+  padding: 10px 10px;
+  font-size: 12px;
+  color: #9ca3af;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  padding: 14px 18px;
+  background: #ffffff;
+  border-bottom: 1px solid #e7eaf0;
+
+  .page-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 900;
+    color: #111827;
+  }
+
+  .hint {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #6b7280;
+  }
+}
+
+.content {
+  padding: 18px;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}

@@ -12,40 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-.auth-shell {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #f3f5f9, #e9ecf2);
-  padding: 24px;
+.h{ margin:0 0 6px; }
+.muted{ margin:0 0 16px; color:#6b7280; font-size:13px; }
+.btn{
+  padding:10px 12px; border-radius:10px; border:1px solid #111827;
+  background:#111827; color:#fff; cursor:pointer;
 }
-
-.auth-container {
-  width: min(520px, 100%);
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
-  padding: 28px;
-}
-
-.auth-header {
-  text-align: center;
-  margin-bottom: 22px;
-
-  .logo {
-    margin: 0;
-    font-size: 26px;
-    font-weight: 800;
-    color: #111827;
-  }
-
-  .subtitle {
-    margin-top: 6px;
-    font-size: 13px;
-    color: #6b7280;
-  }
-}
-
-.auth-content {
-  margin-top: 10px;
-}
+.btn:disabled{ opacity:.6; cursor:not-allowed; }
+.small{ margin-top:12px; font-size:13px; color:#6b7280; }
+.small a{ color:#111827; font-weight:700; text-decoration:none; }
+.error{ margin:10px 0 0; color:#b91c1c; font-size:13px; }
+.ok{ margin:10px 0 0; color:#065f46; font-size:13px; font-weight:700; }

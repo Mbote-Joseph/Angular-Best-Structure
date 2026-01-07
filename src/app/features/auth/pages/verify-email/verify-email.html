@@ -1,0 +1,16 @@
+<h2 class="h">Verify email</h2>
+
+<p class="muted" *ngIf="!token">Missing token. Use the verification link.</p>
+
+<div *ngIf="token">
+  <button class="btn" (click)="verify()" [disabled]="loading || done">
+    {{ loading ? 'Verifying...' : 'Verify now' }}
+  </button>
+
+  <p class="ok" *ngIf="done">Email verified successfully ✅</p>
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <p class="small">
+    Go to <a routerLink="/auth/sign-in">Sign in</a>
+  </p>
+</div>

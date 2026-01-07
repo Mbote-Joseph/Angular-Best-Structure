@@ -1,1 +1,37 @@
-<p>sign-up works!</p>
+<h2 class="h">Create account</h2>
+    <p class="muted">After sign up, we generate a demo email verification token.</p>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <label>Full name</label>
+      <input formControlName="fullName" placeholder="Your name" />
+
+      <label>Email</label>
+      <input type="email" formControlName="email" placeholder="you@example.com" />
+
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="••••••••" />
+
+      <label>Role</label>
+      <select name="role" formControlName="role">
+        <option value="admin">Admin</option>
+        <option value="individual">User</option>
+      </select>
+
+      <button class="btn" [disabled]="form.invalid || loading">
+        {{ loading ? 'Creating...' : 'Sign up' }}
+      </button>
+
+      <p class="small">
+        Already have an account? <a routerLink="/auth/sign-in">Sign in</a>
+      </p>
+      @if(verifyLink){
+      <div class="info">
+        <div class="info-title">Demo verification link (for learning):</div>
+        <code>{{ verifyLink }}</code>
+      </div>
+    }
+
+      @if(error){
+        <p class="error">{{ error }}</p>
+      }
+    </form>

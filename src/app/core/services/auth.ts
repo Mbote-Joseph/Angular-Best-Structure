@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User, UserRole } from '../models/user.model';
-import { EmailValidator } from '@angular/forms';
+
 
 const TOKEN_KEY = 'ls_token';
 const USER_KEY = 'ls_user';
@@ -53,15 +53,16 @@ export class Auth {
 
 
   // Sign-UP
-  signUp(fullName: string, email: string, password: string): void{
+  signUp(fullName: string, email: string, password: string, role: UserRole): void{
     // DEMO ONLY: ignore password
-    const role: UserRole = 'individual';
+    // const role: UserRole = 'individual';
     const user: User = { id: crypto.randomUUID(), fullName, email, role };
 
     localStorage.setItem(TOKEN_KEY, 'demo-token');
     localStorage.setItem(USER_KEY, JSON.stringify(user));
     this.userSubject.next(user);
 
+    console.log(`${user.role} From the Service`)
     // Create demo verify token
     const verify : VerifyToken ={
       token: crypto.randomUUID(),
@@ -138,6 +139,17 @@ export class Auth {
       return null;
     }
   }
+
+
+  updateProfile(data: { fullName: string; email: string }): void {
+    const user = this.currentUser;
+    if (!user) throw new Error('Not authenticated.');
+
+    const updated = { ...user, ...data };
+    localStorage.setItem(USER_KEY, JSON.stringify(updated));
+    this.userSubject.next(updated);
+  }
+
 
 
 }
