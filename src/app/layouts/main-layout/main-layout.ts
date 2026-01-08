@@ -13,6 +13,12 @@ export class MainLayout {
    private router = inject(Router)
    private auth = inject(Auth)
 
+   user: any;
+
+   constructor(){
+    this.user = this.auth.currentUser
+   }
+
    onLogOut():void{
     this.auth.signOut()
     this.router.navigate(['/auth/sign-in'])

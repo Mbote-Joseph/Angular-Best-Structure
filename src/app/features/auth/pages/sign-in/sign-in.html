@@ -5,10 +5,10 @@
 
     <form class="form" [formGroup]="form" (ngSubmit)="submit()">
       <label>Email</label>
-      <input type="email" formControlName="email" placeholder="you@example.com" />
+      <input type="email" formControlName="email" autocomplete="email" placeholder="you@example.com" />
 
       <label>Password</label>
-      <input type="password" formControlName="password" placeholder="••••••••" />
+      <input type="password" formControlName="password" autocomplete="current-password" placeholder="••••••••" />
 
       <div class="row">
         <a routerLink="/auth/forgot-password" class="link">Forgot password?</a>

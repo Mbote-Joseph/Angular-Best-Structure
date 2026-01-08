@@ -84,8 +84,6 @@ export class Auth {
     this.userSubject.next(null);
 
 
-
-
     console.log(`The User has being logged out`)
   }
 

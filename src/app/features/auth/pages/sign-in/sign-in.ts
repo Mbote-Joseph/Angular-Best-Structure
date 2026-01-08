@@ -36,6 +36,9 @@ export class SignIn {
 
       const returnUrl = safeReturnUrl(this.route.snapshot.queryParamMap.get('returnUrl'));
       this.router.navigateByUrl(returnUrl);
+
+      console.log(this.auth.currentUser)
+      console.log(`This user is an : ${this.auth.currentUser?.role}`)
     } catch(e: any){
       this.error = e?.message ?? 'Failed to Sign in.'
     } finally {
